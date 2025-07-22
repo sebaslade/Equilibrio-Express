@@ -12,6 +12,5 @@ class UsuarioCreate(UsuarioBase):
 
 class UsuarioResponse(UsuarioBase):
     id: int
-
     class Config:
         orm_mode = True
