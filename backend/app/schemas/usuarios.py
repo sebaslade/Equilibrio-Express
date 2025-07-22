@@ -14,3 +14,7 @@ class UsuarioResponse(UsuarioBase):
     id: int
     class Config:
         orm_mode = True
+
+class LoginRequest(BaseModel):
+    email: EmailStr
+    password: str

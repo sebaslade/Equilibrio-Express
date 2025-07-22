@@ -1,5 +1,6 @@
 from sqlalchemy import Column, Integer, String, Text
 from app.core.database import Base
+from pydantic import BaseModel, EmailStr
 
 class Usuario(Base):
     __tablename__ = "usuarios"
@@ -10,3 +11,7 @@ class Usuario(Base):
     telefono = Column(String, nullable=True)
     direccion = Column(Text, nullable=True)
     password_hash = Column(Text, nullable=False)
+
+class LoginRequest(BaseModel):
+    email: EmailStr
+    password: str
