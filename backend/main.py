@@ -3,6 +3,7 @@ from app.core.database import engine, Base
 from app import models
 from app.routers import usuarios  # aquí luego irás agregando más routers
 from app.routers import auth  # Importa el router de autenticación si lo tienes
+from app.routers import productos
 
 # Crear las tablas en la BD si no existen
 Base.metadata.create_all(bind=engine)
@@ -17,6 +18,7 @@ app = FastAPI(
 # Incluir los routers (cuando los tengas listos)
 app.include_router(usuarios.router)
 app.include_router(auth.router)
+app.include_router(productos.router)
 
 # Ruta raíz
 @app.get("/")
